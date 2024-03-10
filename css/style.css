@@ -62,8 +62,6 @@ li{
     padding: 2px;
 }
 
-
-
 nav ul {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -177,8 +175,7 @@ video {
     }
 
     p {
-        font-size: 1.2rem;
-        
+        font-size: 1.2rem; 
     }
     
     img:hover, video:hover {
@@ -190,27 +187,26 @@ video {
 
 .map-container {
     position: relative;
-    width: 100%; /* Ensures the container scales with the viewport */
-    max-width: 600px; /* Adjust based on your design preference */
-    margin: auto; /* Center the map */
+    width: 100%; 
+    max-width: 600px;
+    margin: auto; 
 }
 
 .usa-map {
-    display: block; /* Removes any default margin or padding */
+    display: block; 
     width: 100%;
-    height: auto; /* Keeps the map aspect ratio intact */
+    height: auto; 
 }
 
 .pin {
     position: absolute;
-    width: 20px; /* Adjust based on your design */
-    height: 20px; /* Adjust based on your design */
+    width: 20px; 
+    height: 20px; 
     background-color: red;
     color: rgb(0, 0, 0);
     text-align: center;
     border-radius: 50%;
-    transform: translate(-50%, -50%); /* Centers the pin */
-    /* Additional styling */
+    transform: translate(-50%, -50%); 
 }
 
 .pin-yellowstone { top: 42%; left: 31%; }
