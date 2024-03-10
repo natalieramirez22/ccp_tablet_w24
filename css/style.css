@@ -102,51 +102,11 @@ img {
     border-radius: 20px;
 }
 
-.image-grid-recipes {
+.image-grid-all {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 20px; 
     border-radius: 20px;
-}
-
-@media (min-width: 768px) {
-    .image-grid-recipes {
-        grid-template-columns: repeat(2, 1fr);
-        border-radius: 20px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .image-grid-recipes {
-        grid-template-columns: repeat(3, 1fr);
-        border-radius: 20px;
-    }
-}
-
-.image-grid {
-    max-width: 100%;
-    height: auto;
-    border-radius: 20px;
-} 
-
-@media (min-width: 768px) {
-    .image-grid {
-        grid-template-columns: repeat(2, 1fr);
-        border-radius: 20px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .image-grid {
-        grid-template-columns: repeat(3, 1fr); 
-        border-radius: 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    nav ul {
-        grid-template-columns: 1fr;
-    }
 }
 
 .skip a{
@@ -159,43 +119,100 @@ position: absolute;
 top: 20px
 }
 
-/* .skip {
-   position: absolute;
-   left: -1000px;
-   color: rgb(40,40,240);
-   background-color: rgb(243,243,36);
-}
- 
-.skip :focus {
-   left: 1%;
-} */
-
-/* .skip-link {
-    position: absolute;
-    left: -9999px;
-    top: auto;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-}
-
-.skip-link:focus {
-    position: relative;
-    left: auto;
-    top: auto;
-    width: auto;
-    height: auto;
-    overflow: auto;
-    background-color: #06558d;
-    color: #ffffff;
-    padding: 10px;
-    padding: 10px;
-    text-align: center;
-    z-index: 100;
-} */
-
 video {
     margin: auto;
     padding: 10px;
     border-radius: 20px;
 }
+
+/* Media Queries */
+@media (prefers-reduced-motion: reduce) {
+    video {
+        display: none;
+    }
+    source {
+        display: none;
+    }
+}
+
+/* Tablet View Changes */
+@media only screen and (min-width: 768px) {
+    .content-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        grid-gap: 20px; 
+        align-items: start; 
+    }
+
+    .content-section .image-grid-all, .content-section video {
+        grid-column: 1 / 2;
+    }
+
+    .content-section video {
+        width: 100%; 
+        height: auto; 
+        margin-bottom: 10px; 
+    }
+
+    .content-section > p, .content-section > h2, .content-section > h3 {
+        grid-column: 2 / 3;
+    }
+
+    .content-section img {
+        width: 100%; 
+        height: auto; 
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+        
+    }
+    
+    img:hover, video:hover {
+        transition: transform 0.3s ease, box-shadow 0.3s ease; 
+        transform: scale(1.05); 
+        box-shadow: 0 4px 8px rgba(109, 29, 237, 0.987), 0 6px 20px rgba(195, 21, 253, 0.521); 
+    }    
+}
+
+.map-container {
+    position: relative;
+    width: 100%; /* Ensures the container scales with the viewport */
+    max-width: 600px; /* Adjust based on your design preference */
+    margin: auto; /* Center the map */
+}
+
+.usa-map {
+    display: block; /* Removes any default margin or padding */
+    width: 100%;
+    height: auto; /* Keeps the map aspect ratio intact */
+}
+
+.pin {
+    position: absolute;
+    width: 20px; /* Adjust based on your design */
+    height: 20px; /* Adjust based on your design */
+    background-color: red;
+    color: white;
+    text-align: center;
+    border-radius: 50%;
+    transform: translate(-50%, -50%); /* Centers the pin */
+    /* Additional styling */
+}
+
+.pin-yellowstone { top: 42%; left: 31%; }
+.pin-niagara { top: 43%; left: 84%; }
+.pin-boulder {top: 53%; left: 39%;}
